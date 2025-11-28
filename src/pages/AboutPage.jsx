@@ -46,7 +46,7 @@ export default function AboutPage() {
   ]
 
   return (
-    <main className="pt-20 bg-secondary-900 min-h-screen">
+    <main className="pt-20 bg-secondary-900 min-h-screen overflow-hidden">
       <section className="py-20">
         <div className="section-container">
           <motion.div
@@ -122,11 +122,12 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
           >
-            {stats.map((stat, index) => (
+                    {stats.map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
                 className="bg-secondary-800 rounded-xl p-8 text-center border border-secondary-600 card-hover"
@@ -160,7 +161,8 @@ export default function AboutPage() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   transition={{ delay: index * 0.2 }}
                   whileHover={{ y: -5 }}
                   className="bg-secondary-800 rounded-xl p-8 border border-secondary-600 card-hover"
@@ -198,7 +200,8 @@ export default function AboutPage() {
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
                       transition={{ delay: index * 0.05 }}
                       className="flex items-center space-x-3 p-3 rounded-lg hover:bg-primary-500/5 transition-all duration-300"
                     >

@@ -83,12 +83,14 @@ export default function Header() {
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
                     className="absolute top-full left-0 mt-2 w-64 bg-secondary-800 rounded-lg shadow-xl border border-primary-500/20 overflow-hidden"
                   >
                     {item.submenu.map((subItem) => (
                       <Link
                         key={subItem.name}
                         to={subItem.path}
+                        onClick={() => setShowServicesMenu(false)}
                         className="block px-4 py-3 text-gray-300 hover:text-primary-400 hover:bg-secondary-700 transition-all duration-200"
                       >
                         {subItem.name}
@@ -134,19 +136,38 @@ export default function Header() {
             <div className="px-4 py-6 space-y-4">
               {navigationItems.map((item) => (
                 <div key={item.name}>
-                  <Link
-                    to={item.path}
-                    onClick={() => setIsOpen(false)}
-                    className={`block font-medium transition-colors ${
-                      location.pathname === item.path
-                        ? 'text-primary-400'
-                        : 'text-gray-300 hover:text-primary-400'
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                  {item.hasDropdown && (
-                    <div className="ml-4 mt-2 space-y-2">
+                  {item.hasDropdown ? (
+                    <div
+                      className={`flex items-center justify-between font-medium transition-colors ${
+                        location.pathname.startsWith(item.path)
+                          ? 'text-primary-400'
+                          : 'text-gray-300 hover:text-primary-400'
+                      }`}
+                      onClick={() => setShowServicesMenu(!showServicesMenu)}
+                    >
+                      <span>{item.name}</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform ${showServicesMenu ? 'rotate-180' : ''}`} />
+                    </div>
+                  ) : (
+                    <Link
+                      to={item.path}
+                      onClick={() => setIsOpen(false)}
+                      className={`block font-medium transition-colors ${
+                        location.pathname === item.path
+                          ? 'text-primary-400'
+                          : 'text-gray-300 hover:text-primary-400'
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                  {item.hasDropdown && showServicesMenu && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="ml-4 mt-2 space-y-2"
+                    >
                       {item.submenu.map((subItem) => (
                         <Link
                           key={subItem.name}
@@ -157,7 +178,7 @@ export default function Header() {
                           {subItem.name}
                         </Link>
                       ))}
-                    </div>
+                    </motion.div>
                   )}
                 </div>
               ))}

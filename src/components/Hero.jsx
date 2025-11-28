@@ -124,8 +124,8 @@ export default function Hero() {
                 <div>Responsivos</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary-400">24h</div>
-                <div>Suporte</div>
+                <div className="text-2xl font-bold text-primary-400">12 meses</div>
+                <div>Suporte Grátis</div>
               </div>
             </motion.div>
           </motion.div>

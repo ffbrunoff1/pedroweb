@@ -172,7 +172,7 @@ export default function Services() {
                   
                   <Link
                     to="/contato"
-                    className="px-6 py-3 border-2 border-primary-500 text-primary-500 rounded-lg font-semibold hover:bg-primary-500 hover:text-white transition-all duration-300"
+                    className="flex-1 px-6 py-3 border-2 border-primary-500 text-primary-500 rounded-lg font-semibold hover:bg-primary-500 hover:text-white transition-all duration-300 text-center"
                   >
                     Orçamento
                   </Link>

@@ -117,7 +117,7 @@ export default function ServiceDetailPage() {
   }
 
   return (
-    <main className="pt-20 bg-secondary-900 min-h-screen">
+    <main className="pt-20 bg-secondary-900 min-h-screen overflow-hidden">
       <section className="py-20">
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">

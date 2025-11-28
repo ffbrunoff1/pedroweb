@@ -74,7 +74,7 @@ export default function ServicesPage() {
   ]
 
   return (
-    <main className="pt-20 bg-secondary-900 min-h-screen">
+    <main className="pt-20 bg-secondary-900 min-h-screen overflow-hidden">
       <section className="py-20">
         <div className="section-container">
           <motion.div
@@ -102,7 +102,8 @@ export default function ServicesPage() {
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
                 className={`group bg-secondary-800 rounded-2xl overflow-hidden border ${service.borderColor} card-hover`}
@@ -160,7 +161,7 @@ export default function ServicesPage() {
                     
                     <Link
                       to="/contato"
-                      className="px-6 py-3 border-2 border-primary-500 text-primary-500 rounded-lg font-semibold hover:bg-primary-500 hover:text-white transition-all duration-300"
+                      className="flex-1 px-6 py-3 border-2 border-primary-500 text-primary-500 rounded-lg font-semibold hover:bg-primary-500 hover:text-white transition-all duration-300 text-center"
                     >
                       Orçamento
                     </Link>
@@ -179,7 +180,8 @@ export default function ServicesPage() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
                 whileHover={{ y: -5 }}
                 className="bg-secondary-800 rounded-xl p-8 text-center border border-secondary-600 card-hover"
