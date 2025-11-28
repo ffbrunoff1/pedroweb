@@ -108,7 +108,7 @@ export default function AboutPage() {
             >
               <div className="bg-gradient-to-br from-primary-500/10 to-accent-500/10 rounded-2xl p-8 border border-primary-500/20">
                 <img
-                  src="https://qotdwocbcoirjlqjkjhq.supabase.co/storage/v1/object/imagens.website.creation/a4471a11-ec3c-46e3-a009-0066e4810b0a/logo_1764294083251_0.png"
+                  src="https://qotdwocbcoirjlqjkjhq.supabase.co/storage/v1/object/public/user-files/a4471a11-ec3c-46e3-a009-0066e4810b0a/logo_1764294083251_0.png"
                   alt="Pedro Web - Especialista em Desenvolvimento Web"
                   className="w-full max-w-sm mx-auto rounded-xl"
                 />

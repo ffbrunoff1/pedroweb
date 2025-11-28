@@ -53,7 +53,7 @@ export default function Header() {
           <Link to="/" className="flex items-center space-x-3">
             <motion.img
               whileHover={{ scale: 1.05 }}
-              src="https://qotdwocbcoirjlqjkjhq.supabase.co/storage/v1/object/imagens.website.creation/a4471a11-ec3c-46e3-a009-0066e4810b0a/logo_1764294083251_0.png"
+              src="https://qotdwocbcoirjlqjkjhq.supabase.co/storage/v1/object/public/user-files/a4471a11-ec3c-46e3-a009-0066e4810b0a/logo_1764294083251_0.png"
               alt="Pedro Web"
               className="h-12 w-auto"
             />
